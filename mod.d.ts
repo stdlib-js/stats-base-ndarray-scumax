@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,24 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float32ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Compute the cumulative maximum value of a one-dimensional single-precision floating-point ndarray.
+* Computes the cumulative maximum value of a one-dimensional single-precision floating-point ndarray.
 *
-* @module @stdlib/stats-base-ndarray-scumax
+* @param arrays - array-like object containing an input ndarray and an output ndarray
+* @returns output ndarray
 *
 * @example
 * var Float32Array = require( '@stdlib/array-float32' );
 * var ndarray2array = require( '@stdlib/ndarray-to-array' );
 * var ndarray = require( '@stdlib/ndarray-base-ctor' );
-* var scumax = require( '@stdlib/stats-base-ndarray-scumax' );
 *
 * var xbuf = new Float32Array( [ 1.0, 3.0, 4.0, 2.0 ] );
 * var x = new ndarray( 'float32', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
 *
 * var ybuf = new Float32Array( [ 0.0, 0.0, 0.0, 0.0 ] );
-* var y = new ndarray( 'float32', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
+* var y = new ndarray( 'float32', ybuf, [ 4 ], [ 1 ], 0, 'row-major' );
 *
 * var v = scumax( [ x, y ] );
 * // returns <ndarray>
@@ -44,12 +48,9 @@
 * var arr = ndarray2array( v );
 * // returns [ 1.0, 3.0, 4.0, 4.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function scumax( arrays: [ float32ndarray, float32ndarray ] ): float32ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = scumax;
